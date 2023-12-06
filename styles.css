@@ -25,7 +25,7 @@ body {
   background: linear-gradient(180deg, #000, #555);
 
   flex-direction: column;
-  gap: 4.6rem;
+  gap: 3.6rem;
 }
 
 .title {
@@ -35,7 +35,7 @@ body {
 .cash-total {
   position: absolute;
   letter-spacing: 1.4px;
-  font-size: 2.2rem;
+  font-size: 3.2rem;
   font-weight: 500;
   top: 3.5rem;
   left: 3.5rem;
@@ -101,4 +101,37 @@ body {
 
 .tie {
   background-color: #d97706;
+}
+
+/* CREATE A CLASS FOR THE SELECT ELEMENT WHERE THE SELECT ELEMENT GETS A SHADOW, AND THE NOT SELECTED ELEMENTS LOSE SOME OF HIS COLOR / BRIGHTNESS */
+
+.bet-form {
+  width: 31rem;
+  height: 4.5rem;
+  color: #fff;
+  background-color: rgba(255, 255, 0, 0.1);
+  gap: 0.3rem;
+  border-radius: 10px;
+  font-size: 2.2rem;
+  font-weight: 600;
+  letter-spacing: 1.1px;
+}
+
+.total-bet {
+  width: 100%;
+  text-align: center;
+}
+
+.bet-input {
+  height: 100%;
+  width: 100%;
+  border: 0;
+
+  text-align: center;
+  color: #22c55e;
+  font-size: 2.2rem;
+  font-weight: 600;
+  background-color: rgba(255, 255, 0, 0.1);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
