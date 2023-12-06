@@ -1,0 +1,8 @@
+GAME LOGIC: User will start with $100000 on his account, the goal is to become a millonaire by doing bets on which of the 2 teams is going a) Win b) Lose c) Tie
+
+REQUIREMENTS:
+1) User can decide how much money he will use on each match.
+2) Each win will double user bet amount, or reduce it in half
+3) User can choose to which team he want to bet, and what kind of bet he wants to do (win, lose, tie)
+4) If user pass the million dollars, he win, if he loses all the money, game over!
+
