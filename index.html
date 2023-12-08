@@ -43,7 +43,7 @@
     <!-- SCREEN NOTIFICATIONS (TO CHANGE THE ELEMENT, TOGGLE THE HIDDEN CLASS)-->
     <div class="notifications flex-center">
       <!-- RULES FOR STARTING THE GAME -->
-      <div class="rules flex-center">
+      <div class="rules flex-center hidden">
         <h2 class="title">How to play:</h2>
         <ol class="rules-list flex-center">
           <li>Click on the team that you want to bet on.</li>
@@ -66,15 +66,51 @@
         </h3>
         <h3 class="possible-result possible-lose">
           <span class="possible-lose-high">IF YOU LOSE:</span> YOUR TOTAL BET
-          WILL BE SPLIT IN HALF AND SUBTRACTED FROM YOUR TOTAL AMOUNT
+          WILL BE SUBTRACTED FROM YOUR TOTAL AMOUNT
         </h3>
 
         <h3 class="luck">Good Luck!</h3>
-
-        <button class="close-rules">
-          <span class="material-symbols-outlined">close</span>
-        </button>
       </div>
+
+      <!-- RESULTS NOTIFICATION ELEMENT -->
+      <div class="results flex-center">
+        <!-- TITLE -->
+        <h2 class="title results-title">RESULTS</h2>
+        <!-- RESULT OF THE MATCH -->
+        <div class="teams-result flex-center">
+          <h2 class="results-text result-red">
+            Red: <span class="team-result-value">1</span>
+          </h2>
+          <h2 class="results-text result-blue">
+            Blue: <span class="team-result-value">1</span>
+          </h2>
+        </div>
+        <!-- TOTAL BET -->
+        <h2 class="bet-result-title">
+          Your total bet was:
+          <span class="total-bet-text">
+            $<span class="bet-input-result">10</span></span
+          >
+        </h2>
+        <!-- LOSE OR WIN TAKE (if lose, change color to red) -->
+        <h2 class="bet-result-title green">
+          You <span class="bet-result">won</span>:
+          <span class="green cash-text">
+            $<span class="result-amount">10</span></span
+          >
+        </h2>
+        <!-- CURRENT CASH AMOUNT -->
+        <h2 class="bet-result-title">
+          Your total cash is:
+          <span class="cash-text"> $<span class="total-result">10</span></span>
+        </h2>
+        <!-- PLAY AGAIN BUTTON -->
+        <button class="play play-again">PLAY AGAIN</button>
+      </div>
+
+      <button class="close-rules">
+        <span class="material-symbols-outlined">close</span>
+      </button>
     </div>
 
     <!-- HIDE THIS CLASS USING THE 'HIDDEN' CLASS AFTER STARTING THE GAME -->
