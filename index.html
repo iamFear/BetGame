@@ -40,38 +40,41 @@
     <!-- ABSOLUTE POSITION ELEMENTS -->
     <p class="cash-total">$<span class="cash">100000</span></p>
 
-    <!-- RULES FOR STARTING THE GAME -->
-    <div class="rules flex-center">
-      <h2 class="title">How to play:</h2>
-      <ol class="rules-list flex-center">
-        <li>Click on the team that you want to bet on.</li>
-        <li>
-          Select what kind of bet you want to make (your team can win, lose or
-          tie the match).
-        </li>
-        <li>
-          Select the total amount you want to bet (you can only bet money that
-          is available in your account).
-        </li>
-        <li>
-          Click on "PLACE YOUR BET" button, confirm your bet, and good luck!
-        </li>
-      </ol>
+    <!-- SCREEN NOTIFICATIONS (TO CHANGE THE ELEMENT, TOGGLE THE HIDDEN CLASS)-->
+    <div class="notifications flex-center">
+      <!-- RULES FOR STARTING THE GAME -->
+      <div class="rules flex-center">
+        <h2 class="title">How to play:</h2>
+        <ol class="rules-list flex-center">
+          <li>Click on the team that you want to bet on.</li>
+          <li>
+            Select what kind of bet you want to make (your team can win, lose or
+            tie the match).
+          </li>
+          <li>
+            Select the total amount you want to bet (you can only bet money that
+            is available in your account).
+          </li>
+          <li>
+            Click on "PLACE YOUR BET" button, confirm your bet, and good luck!
+          </li>
+        </ol>
 
-      <h3 class="possible-result possible-win">
-        <span class="possible-win-high">IF YOU WIN:</span> YOUR TOTAL BET WILL
-        BE MULTIPLIED BY 2 AND ADDED TO YOUR TOTAL AMOUNT
-      </h3>
-      <h3 class="possible-result possible-lose">
-        <span class="possible-lose-high">IF YOU LOSE:</span> YOUR TOTAL BET WILL
-        BE MULTIPLIED BY 2 AND SUBTRACTED FROM YOUR TOTAL AMOUNT
-      </h3>
+        <h3 class="possible-result possible-win">
+          <span class="possible-win-high">IF YOU WIN:</span> YOUR TOTAL BET WILL
+          BE DOUBLED AND ADDED TO YOUR TOTAL AMOUNT
+        </h3>
+        <h3 class="possible-result possible-lose">
+          <span class="possible-lose-high">IF YOU LOSE:</span> YOUR TOTAL BET
+          WILL BE SPLIT IN HALF AND SUBTRACTED FROM YOUR TOTAL AMOUNT
+        </h3>
 
-      <h3 class="luck">Good Luck!</h3>
+        <h3 class="luck">Good Luck!</h3>
 
-      <button class="close-rules">
-        <span class="material-symbols-outlined"> close </span>
-      </button>
+        <button class="close-rules">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
     </div>
 
     <!-- HIDE THIS CLASS USING THE 'HIDDEN' CLASS AFTER STARTING THE GAME -->

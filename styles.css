@@ -178,11 +178,9 @@ body {
 
 /* RULES ELEMENT */
 
-.rules {
+.notifications {
   position: absolute;
   z-index: 10;
-  flex-direction: column;
-  gap: 1.4rem;
 
   height: 46rem;
   width: 32rem;
@@ -190,6 +188,11 @@ body {
 
   background: linear-gradient(180deg, rgb(0, 0, 0), rgb(30, 30, 30));
   box-shadow: 0px 0px 50px 5px rgba(255, 255, 255, 0.2);
+}
+
+.rules {
+  gap: 1.4rem;
+  flex-direction: column;
 }
 
 .rules-list {
