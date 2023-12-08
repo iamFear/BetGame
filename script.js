@@ -112,5 +112,10 @@ tieBtn.addEventListener("click", function () {
 
 // GET BET INPUT FROM THE USER / GAME FUNCTIONALITY (MATCH CALCULATIONS)
 playBtn.addEventListener("click", function () {
+  // TODO: ADD THE ERROR MESSAGES FOR WRONG INPUTS`
+
+  // DOCUMENTATION: METHOD TO CHECK IF A NUM IS AN INTEGER
+  // Number.isInteger(x);
+
   totalBet = betInput.value;
 });
