@@ -246,7 +246,7 @@ body {
 }
 
 .results {
-  gap: 2rem;
+  gap: 2.4rem;
   flex-direction: column;
 }
 
