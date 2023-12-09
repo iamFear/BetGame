@@ -145,10 +145,28 @@ playBtn.addEventListener("click", function () {
     errorType.textContent = errors.type;
     return 1;
   }
+  // VALIDATE AND CHECK USER BET AMOUNT INPUT
 
-  // TODO: VALIDATE THE BET INPUT VALUE AND STORE IT
+  // STORE THE BET INPUT FROM THE USER
+  totalBet = betInput.value;
+  // TRANSFORM THE INPUT IT INTO A STRING
+  let betTransform = Number(totalBet);
 
-  // DOCUMENTATION: METHOD TO CHECK IF A NUM IS AN INTEGER
-  // Number.isInteger(x);
+  // CHECK IF TRANSFORMED INPUT BET IS A POSITIVE INTEGER
+  let integer = Number.isInteger(betTransform);
+
+  if (!integer || betTransform <= 0) {
+    error.classList.remove("hidden");
+    errorType.textContent = errors.bet;
+  }
+
+  // CHECK IF TOTAL BET IS AVAILABLE IN CASH
+  if (totalBet > cash) {
+    error.classList.remove("hidden");
+    errorType.textContent = errors.bet;
+  }
+
+  // TODO IMPLEMENT GAME FUNCTIONALITY
+
   console.log(`function end`);
 });
