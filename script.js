@@ -12,6 +12,8 @@ const betInput = document.querySelector(".bet-input");
 const blur = document.querySelector(".blur");
 const notifications = document.querySelector(".notifications");
 const cashEl = document.querySelector(".cash");
+const error = document.querySelector(".error");
+const errorType = document.querySelector(".error-type");
 
 // FUNCTIONS:
 // CLOSE THE NOTIFICATIONS AND RETURN TO MAIN PAGE (PLAY GAME)
@@ -28,6 +30,16 @@ const updateCash = () => {
 // VARIABLES
 let cash = 100000;
 let totalBet = 0;
+// IF TEAM = 0 -> RED || BLUE = 1
+let team = undefined;
+// IF TYPE = 0 -> WIN || 1 -> LOSE || 2 -> TIE
+let type = undefined;
+// OBJECT WITH THE LIST OF ERRORS (STRINGS)
+let errors = {
+  team: `team`,
+  type: "type of bet",
+  bet: `valid amount`,
+};
 
 // APPLICATION:
 
@@ -64,6 +76,7 @@ redBtn.addEventListener("click", function () {
 
   blueBtn.classList.remove("selected");
   blueBtn.classList.add("rival");
+  team = 0;
 });
 
 // BLUE TEAM
@@ -73,6 +86,7 @@ blueBtn.addEventListener("click", function () {
 
   redBtn.classList.remove("selected");
   redBtn.classList.add("rival");
+  team = 1;
 });
 
 // BET SELECTION
@@ -86,6 +100,7 @@ winBtn.addEventListener("click", function () {
   loseBtn.classList.remove("selected");
   tieBtn.classList.add("rival");
   tieBtn.classList.remove("selected");
+  type = 0;
 });
 
 // LOSE BET
@@ -97,6 +112,7 @@ loseBtn.addEventListener("click", function () {
   winBtn.classList.remove("selected");
   tieBtn.classList.add("rival");
   tieBtn.classList.remove("selected");
+  type = 1;
 });
 
 // TIE BET
@@ -108,14 +124,31 @@ tieBtn.addEventListener("click", function () {
   winBtn.classList.remove("selected");
   loseBtn.classList.add("rival");
   loseBtn.classList.remove("selected");
+  type = 2;
 });
 
 // GET BET INPUT FROM THE USER / GAME FUNCTIONALITY (MATCH CALCULATIONS)
 playBtn.addEventListener("click", function () {
-  // TODO: ADD THE ERROR MESSAGES FOR WRONG INPUTS`
+  // CHECK IF USER SELECTED A TEAM
+  if (team != 0 && team != 1) {
+    error.classList.remove("hidden");
+    errorType.textContent = errors.team;
+    return 1;
+  }
+
+  // VALIDATE AND CHECK IF USER SELECTED A BET
+  const validateType = type >= 0 && type <= 3;
+
+  // IF FALSE, DISPLAY ERROR MESSAGE
+  if (!validateType) {
+    error.classList.remove("hidden");
+    errorType.textContent = errors.type;
+    return 1;
+  }
+
+  // TODO: VALIDATE THE BET INPUT VALUE AND STORE IT
 
   // DOCUMENTATION: METHOD TO CHECK IF A NUM IS AN INTEGER
   // Number.isInteger(x);
-
-  totalBet = betInput.value;
+  console.log(`function end`);
 });
