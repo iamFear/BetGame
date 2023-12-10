@@ -33,7 +33,7 @@
       <input type="number" name="bet-amount" class="bet-input" />
     </form>
 
-    <button class="play">Place your bet</button>
+    <button class="play play-game">Place your bet</button>
 
     <h2 class="title hidden error">
       Please select a <span class="error-type"></span>
@@ -87,11 +87,23 @@
             Blue: <span class="team-result-value">1</span>
           </h2>
         </div>
-        <!-- TOTAL BET -->
+        <!-- SELECTED TEAM -->
+        <h2 class="bet-result-title">
+          You betted on the team:
+          <span class="total-bet-text">
+            <span class="bet-input-result bet-input-team">TEAM</span></span
+          >
+          <!-- SELECTED BET -->
+          <h2 class="bet-result-title">
+            Your type of bet was:
+            <span class="total-bet-text">
+              <span class="bet-input-result bet-input-type">TYPE</span></span
+            >
+            <!-- TOTAL BET -->
         <h2 class="bet-result-title">
           Your total bet was:
           <span class="total-bet-text">
-            $<span class="bet-input-result">10</span></span
+            $<span class="bet-input-result bet-input-amount">10</span></span
           >
         </h2>
         <!-- LOSE OR WIN TAKE (if lose, change color to red) -->
