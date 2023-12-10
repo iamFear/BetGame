@@ -20,6 +20,8 @@ const resultsEl = document.querySelector(".results");
 const betResultTeamEl = document.querySelector(".bet-input-team");
 const betResultTypeEl = document.querySelector(".bet-input-type");
 const betResultAmountEl = document.querySelector(".bet-input-amount");
+const resultRedEl = document.querySelector(".result-red");
+const resultBlueEl = document.querySelector(".result-blue");
 
 // FUNCTIONS:
 // CLOSE THE NOTIFICATIONS AND RETURN TO MAIN PAGE (PLAY GAME)
@@ -40,6 +42,9 @@ const resetGame = () => {
 
   team = undefined;
   type = undefined;
+  redScore = undefined;
+  blueScore = undefined;
+  winner = undefined;
   totalBet = 0;
   resultsOpen = false;
   redBtn.classList.remove("selected");
@@ -60,6 +65,12 @@ const updateCash = () => {
   cashEl.textContent = cash;
 };
 
+// GENERATES A RANDOM NUMBER FROM 0 TO 5 (USE TO GENERATE TEAM SCORES)
+
+const randomGenerator = () => {
+  return Math.round(Math.random() * 5);
+};
+
 // VARIABLES
 let cash = 100000;
 let totalBet = 0;
@@ -75,6 +86,12 @@ let errors = {
   type: "type of bet",
   bet: `valid amount`,
 };
+// TEAM SCORES
+let redScore = undefined;
+let blueScore = undefined;
+
+// WINNER (O === RED || 1 === BLUE || 2 === TIE)
+let winner = undefined;
 
 // TRACK IF THE RESULT ELEMENT IS OPEN
 let resultsOpen = false;
@@ -214,12 +231,27 @@ playBtn.addEventListener("click", function () {
     return 1;
   }
 
-  // TODO IMPLEMENT GAME FUNCTIONALITY
-
+  // GAME FUNCTIONALITY
   resultsOpen = true;
   error.classList.add("hidden");
   rulesEl.classList.add("hidden");
   resultsEl.classList.remove("hidden");
+
+  // GENERATE THE SCORES FOR THE TEAMS AND DISPLAY THEM
+  redScore = randomGenerator();
+  blueScore = randomGenerator();
+
+  resultRedEl.textContent = redScore;
+  resultBlueEl.textContent = blueScore;
+
+  // DEFINE THE RESULT OF THE MATCH
+  if (redScore > blueScore) {
+    winner = 0; // RED
+  } else if (redScore < blueScore) {
+    winner = 1; // BLUE
+  } else {
+    winner = 2; // TIE
+  }
 
   betResultTeamEl.textContent = teamsContainer[team];
 
