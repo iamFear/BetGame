@@ -22,7 +22,11 @@ const betResultTypeEl = document.querySelector(".bet-input-type");
 const betResultAmountEl = document.querySelector(".bet-input-amount");
 const resultRedEl = document.querySelector(".result-red");
 const resultBlueEl = document.querySelector(".result-blue");
-
+const resultAmountEl = document.querySelector(".result-amount");
+const typeResultEl = document.querySelector(".bet-result");
+const betResultEl = document.querySelector(".bet-result-type");
+const resultTotalAmount = document.querySelector(".total-result");
+const cashTextResult = document.querySelector(".cash-text");
 // FUNCTIONS:
 // CLOSE THE NOTIFICATIONS AND RETURN TO MAIN PAGE (PLAY GAME)
 const closeNotifications = () => {
@@ -257,12 +261,53 @@ playBtn.addEventListener("click", function () {
 
   // CHECK IF BET WAS WON OR LOSED (TODO: ADD FUNCTIONALITY TO EACH CASE)
   if (winner === team && type === 0 && winner != 2) {
-    console.log(`You won the bet (win)`);
+    // WON THE BET (WIN);
+    const addCash = betTransform * 2;
+    cash += addCash;
+    betResultEl.classList.remove("red");
+    betResultEl.classList.add("green");
+    cashTextResult.classList.remove("red");
+    cashTextResult.classList.add("green");
+    typeResultEl.textContent = "won";
+    resultAmountEl.textContent = addCash;
+    resultTotalAmount.textContent = cash;
+    cashEl.textContent = cash;
   } else if (winner != team && type === 1 && winner != 2) {
-    console.log(`You won the bet (lose)`);
+    // WON THE BET (LOSE)
+    const addCash = betTransform * 2;
+    cash += addCash;
+    betResultEl.classList.remove("red");
+    betResultEl.classList.add("green");
+    cashTextResult.classList.remove("red");
+    cashTextResult.classList.add("green");
+    typeResultEl.textContent = "won";
+    resultAmountEl.textContent = addCash;
+    resultTotalAmount.textContent = cash;
+    cashEl.textContent = cash;
   } else if (winner === 2 && type === 2) {
-    console.log(`You won the bet (tie)`);
+    // WON THE BET (TIE)
+    const addCash = betTransform * 2;
+    cash += addCash;
+    betResultEl.classList.remove("red");
+    betResultEl.classList.add("green");
+    cashTextResult.classList.remove("red");
+    cashTextResult.classList.add("green");
+    typeResultEl.textContent = "won";
+    resultAmountEl.textContent = addCash;
+    resultTotalAmount.textContent = cash;
+    cashEl.textContent = cash;
   } else {
+    // LOSE THE BET
+    const subtractCash = betTransform / 2;
+    cash -= subtractCash;
+    betResultEl.classList.remove("green");
+    betResultEl.classList.add("red");
+    cashTextResult.classList.remove("green");
+    cashTextResult.classList.add("red");
+    typeResultEl.textContent = "losed";
+    resultAmountEl.textContent = subtractCash;
+    resultTotalAmount.textContent = cash;
+    cashEl.textContent = cash;
     console.log(`You losed the bet`);
   }
 
