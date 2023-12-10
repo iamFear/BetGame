@@ -193,7 +193,7 @@ tieBtn.addEventListener("click", function () {
 // GET BET INPUT FROM THE USER / GAME FUNCTIONALITY (MATCH CALCULATIONS)
 playBtn.addEventListener("click", function () {
   // CHECK IF USER SELECTED A TEAM
-  if (team != 0 && team != 1) {
+  if (team != 0 && team != 1 && type != 2) {
     error.classList.remove("hidden");
     errorType.textContent = errors.team;
     return 1;
