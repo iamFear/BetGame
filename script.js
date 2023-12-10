@@ -245,12 +245,25 @@ playBtn.addEventListener("click", function () {
   resultBlueEl.textContent = blueScore;
 
   // DEFINE THE RESULT OF THE MATCH
+
+  // CHECK WINNER TEAM
   if (redScore > blueScore) {
     winner = 0; // RED
   } else if (redScore < blueScore) {
     winner = 1; // BLUE
   } else {
     winner = 2; // TIE
+  }
+
+  // CHECK IF BET WAS WON OR LOSED (TODO: ADD FUNCTIONALITY TO EACH CASE)
+  if (winner === team && type === 0 && winner != 2) {
+    console.log(`You won the bet (win)`);
+  } else if (winner != team && type === 1 && winner != 2) {
+    console.log(`You won the bet (lose)`);
+  } else if (winner === 2 && type === 2) {
+    console.log(`You won the bet (tie)`);
+  } else {
+    console.log(`You losed the bet`);
   }
 
   betResultTeamEl.textContent = teamsContainer[team];
@@ -284,7 +297,7 @@ playBtn.addEventListener("click", function () {
   openNotifications();
 
   console.log(teamsContainer[team]);
-  console.log(typesContainer[type]);
+  console.log(typesContainer[type], type);
   console.log(betTransform);
   console.log(`function end`);
 });
